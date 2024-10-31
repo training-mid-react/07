@@ -1,7 +1,7 @@
 # Reto: Implementación del juego "4 en Línea" en React
 
 Descripción del Juego: El objetivo de "4 en Línea" es lograr alinear cuatro fichas consecutivas, ya sea de forma horizontal, vertical o diagonal, en un tablero de 7 columnas por 6 filas. Este es un juego de dos jugadores que se turnan para dejar caer sus fichas en la columna de su elección. Cada ficha cae hasta ocupar la posición más baja disponible en la columna seleccionada.
-
+[Video de apoyo.](https://www.youtube.com/watch?v=JBSbiilzg9U)
 ## Reglas:
 
  - El juego comienza con un tablero vacío.
@@ -9,6 +9,7 @@ Descripción del Juego: El objetivo de "4 en Línea" es lograr alinear cuatro fi
  - La ficha cae hasta el espacio más bajo disponible en la columna elegida.
  - El juego termina cuando uno de los jugadores consigue alinear cuatro de sus fichas consecutivas en cualquier dirección (horizontal, vertical o diagonal) o si ya no quedan espacios en el tablero, resultando en empate.
  - El juego debe indicar claramente cuándo hay un ganador o si ocurre un empate.
+ - Se debe usar la arquitectura y la estrategia de manejo de estado que hemos visto.
 
 ## Pistas:
 
