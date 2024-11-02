@@ -1,0 +1,66 @@
+.score-board {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin-right: 50%;
+
+    &__player {
+        display: flex;
+        gap: 5px;
+    }
+
+    &__image {
+        width: 30px;
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+
+
+        &--player1 {
+            background-color: #ff0000;
+        }
+
+        &--player2 {
+            background-color: #59be1f;
+        }
+    }
+
+    &__layer {
+        font-size: 20px;
+        color: black;
+        font-weight: bold;
+
+        &--player {
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+}
+
+.current-player {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    &__label {
+        font-size: 20px;
+    }
+
+    &__image {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+
+
+        &--player1 {
+            background-color: #ff0000;
+        }
+
+        &--player2 {
+            background-color: #59be1f;
+        }
+    }
+}

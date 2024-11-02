@@ -1,0 +1,25 @@
+.layout-main {
+    background-color: #242424;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+
+    padding-inline: 30px;
+
+    &__header {
+        padding: 20px 10px;
+    }
+
+    &__scoreboard {
+        padding: 10px 0px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__content {
+        padding-block: 10px;
+        padding-inline: 10px;
+    }
+
+
+}
