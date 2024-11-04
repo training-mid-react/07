@@ -1,3 +1,4 @@
+import { verifyWinUser } from '../../../utils/verifyWin';
 import { GameState } from '../../interfaces/gameState';
 import { tableroActionTypes } from './actions';
 
@@ -7,7 +8,9 @@ export const tableroInitialState: GameState = {
     tableroRow: 0,
     tableroColumn: 0,
     tableroCell: 0,
-    isPlayerOneTurn: true
+    isPlayerOneTurn: true,
+    isThereWinner: false,
+    winnerPlayer: 0
 }
 
 
@@ -34,12 +37,18 @@ export const tableroCases = {
         const { tablero, isPlayerOneTurn } = state
         const auxBoard = tablero.map(row => [...row]);
 
+        // console.log(payload)
+
+        let placedRow
+        let placedColumn
         for (let row = auxBoard.length - 1; row >= 0; row--) {
             // Verificar si la celda está vacía
             if (auxBoard[row][payload] === null) {
                 // Colocar la ficha del jugador actual
+                // TODO obtener la posicion actual cuando mejore mi estomago
                 auxBoard[row][payload] = isPlayerOneTurn ? 1 : 2;
-
+                placedRow = row;
+                placedColumn = payload;
                 //   // Actualizar el tablero y alternar el turno del jugador
                 //   setBoard(auxBoard);
                 //   setIsPlayerOneTurn(!isPlayerOneTurn);
@@ -49,11 +58,47 @@ export const tableroCases = {
             }
         }
 
+
+
         return {
             ...state,
+            tableroRow: placedRow,
+            tableroColumn: placedColumn,
             tablero: auxBoard
         }
 
+    },
+
+
+    [tableroActionTypes.HANDLE_CLICK]: (state: GameState) => {
+
+        console.table(state.tablero)
+        return {
+            ...state
+        }
+
+    },
+
+    [tableroActionTypes.VERIFY_WIN]: (state: GameState) => {
+
+        const { isPlayerOneTurn, tableroRow, tableroColumn } = state
+
+
+        console.log({ isPlayerOneTurn, tableroRow, tableroColumn })
+
+        const isAWinner = verifyWinUser(state)
+
+        console.log({ isAWinner })
+        return {
+            ...state,
+            isThereWinner: isAWinner,
+            winnerPLayer: isPlayerOneTurn ? 1 : 2
+        }
+
+
     }
 
+
+
 }
+

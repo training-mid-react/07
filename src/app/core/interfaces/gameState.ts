@@ -4,4 +4,6 @@ export interface GameState {
     tableroColumn: number;
     tableroCell: number;
     isPlayerOneTurn: boolean;
+    isThereWinner: boolean;
+    winnerPlayer: number;
 }

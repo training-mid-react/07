@@ -1,3 +1,4 @@
+import { GameState } from "../../interfaces/gameState";
 
 export const tableroActionTypes = {
     SET_TABLERO: "SET_TABLERO",
@@ -6,6 +7,8 @@ export const tableroActionTypes = {
     SET_TABLERO_CELL: "SET_TABLERO_CELL",
     RESET_TABLERO: "RESET_TABLERO",
     DROP_COIN: "DROP_COIN",
+    HANDLE_CLICK: "HANDLE_CLICK",
+    VERIFY_WIN: "VERIFY_WIN",
     CHANGE_TURN: "CHANGE_TURN",
 };
 
@@ -30,10 +33,25 @@ export const changeTurn = (payload) => {
 };
 
 export const handleDrop = (columnDropped: number) => {
-
     return {
         type: tableroActionTypes.DROP_COIN,
         payload: columnDropped
     }
+};
 
+export const handleClick = (state: GameState) => {
+
+    return {
+        type: tableroActionTypes.HANDLE_CLICK,
+        payload: state
+
+    }
+};
+
+
+export const verifyWin = (state: GameState) => {
+    return {
+        type: tableroActionTypes.VERIFY_WIN,
+        payload: state
+    }
 }
