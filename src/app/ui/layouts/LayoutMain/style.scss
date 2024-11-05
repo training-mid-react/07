@@ -1,0 +1,8 @@
+@use '../../styles/' as mix;
+
+.layout-main {
+    justify-content: center;
+    min-height: 100vh;
+    @include mix.flex();
+  }
+  

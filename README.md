@@ -1,22 +1,50 @@
-# Reto: Implementación del juego "4 en Línea" en React
+# React + TypeScript + Vite
 
-Descripción del Juego: El objetivo de "4 en Línea" es lograr alinear cuatro fichas consecutivas, ya sea de forma horizontal, vertical o diagonal, en un tablero de 7 columnas por 6 filas. Este es un juego de dos jugadores que se turnan para dejar caer sus fichas en la columna de su elección. Cada ficha cae hasta ocupar la posición más baja disponible en la columna seleccionada.
-[Video de apoyo.](https://www.youtube.com/watch?v=JBSbiilzg9U)
-## Reglas:
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
- - El juego comienza con un tablero vacío.
- - En cada turno, los jugadores eligen una columna donde desean colocar su ficha.
- - La ficha cae hasta el espacio más bajo disponible en la columna elegida.
- - El juego termina cuando uno de los jugadores consigue alinear cuatro de sus fichas consecutivas en cualquier dirección (horizontal, vertical o diagonal) o si ya no quedan espacios en el tablero, resultando en empate.
- - El juego debe indicar claramente cuándo hay un ganador o si ocurre un empate.
- - Se debe usar la arquitectura y la estrategia de manejo de estado que hemos visto.
+Currently, two official plugins are available:
 
-## Pistas:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- Considera representar el tablero como una matriz bidimensional para simplificar el seguimiento de las fichas en cada columna y fila.
-- Piensa en funciones reutilizables que puedan verificar las condiciones de victoria después de cada movimiento.
-- Usa CSS Flexbox o Grid para facilitar la disposición del tablero y las columnas.
+## Expanding the ESLint configuration
 
-Se debe entregar por medio de pull request el día martes antes del assesment.
-#
-- [@JacoboGarces - Coach Técnico](https://www.github.com/jacobogarces)
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+
+- Configure the top-level `parserOptions` property like this:
+
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
+
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
+
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```

@@ -1,0 +1,21 @@
+@use './variables' as var;
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  background: 
+  linear-gradient(var.$color-purple 2px, transparent 2px) repeat-y,
+  var.$color-dark-purple;
+background-size: 100% 20px; // altura de cada línea horizontal
+line-height: 1.6;
+}
+
+h1 {
+    font-size: 40px;
+}
