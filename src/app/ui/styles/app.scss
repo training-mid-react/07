@@ -1,0 +1,22 @@
+@use 'mixins' as mixins;
+
+.app {
+  &__background {
+    @include mixins.centeredFlex;
+    @include mixins.retroFontColor;
+
+    align-items: center;
+
+    background-color: rgb(85, 53, 5);
+    animation: move-background 10s linear infinite;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__p {
+    height: 15px;
+    font-size: large;
+  }
+}

@@ -1,0 +1,45 @@
+@use 'constants';
+
+.board {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100px;
+  cursor: pointer;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  background-color: white;
+
+  &__player1 {
+    background-color: constants.$primary-color;
+    animation-name: dropToken;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    z-index: 30;
+  }
+
+  &__player2 {
+    background-color: constants.$secondary-color;
+    animation-name: dropToken;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    z-index: 30;
+  }
+}
+
+@keyframes example {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0;
+  }
+}
