@@ -1,0 +1,28 @@
+@use "../../styles/variables.scss" as variables;
+.layout {
+    height: 100dvh;
+    background-color:  variables.$background-section;
+    padding-block: 60px;
+    &__title{
+        text-align: center;
+        font-size: 2.2rem;
+        color: #fff;
+    }
+    &__player{
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.8rem;
+        color: #fff;
+        span{
+            color: #5679f7;
+            font-weight: bold;
+        }
+    }
+    &__content{
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding-inline: 20px;
+    }
+}
