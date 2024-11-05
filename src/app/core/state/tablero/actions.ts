@@ -26,7 +26,7 @@ export const resetTablero = () => {
     };
 };
 
-export const changeTurn = (payload) => {
+export const changeTurn = (payload: GameState) => {
     return {
         type: tableroActionTypes.CHANGE_TURN,
         payload

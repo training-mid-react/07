@@ -37,24 +37,20 @@ export const tableroCases = {
         const { tablero, isPlayerOneTurn } = state
         const auxBoard = tablero.map(row => [...row]);
 
-        // console.log(payload)
-
         let placedRow
         let placedColumn
         for (let row = auxBoard.length - 1; row >= 0; row--) {
-            // Verificar si la celda está vacía
+
             if (auxBoard[row][payload] === null) {
                 // Colocar la ficha del jugador actual
                 // TODO obtener la posicion actual cuando mejore mi estomago
                 auxBoard[row][payload] = isPlayerOneTurn ? 1 : 2;
                 placedRow = row;
                 placedColumn = payload;
-                //   // Actualizar el tablero y alternar el turno del jugador
+
                 break;
             }
         }
-
-
 
         return {
             ...state,
@@ -77,10 +73,7 @@ export const tableroCases = {
 
     [tableroActionTypes.VERIFY_WIN]: (state: GameState) => {
 
-        const { isPlayerOneTurn, tableroRow, tableroColumn } = state
-
-
-        console.log({ isPlayerOneTurn, tableroRow, tableroColumn })
+        const { isPlayerOneTurn } = state
 
         const isAWinner = verifyWinUser(state)
 

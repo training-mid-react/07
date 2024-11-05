@@ -1,5 +1,4 @@
 import { GameState } from "../core/interfaces/gameState";
-import { verifyDraw } from '../core/state/tablero/actions';
 
 export const verifyWinUser = (state: GameState) => {
 
@@ -90,16 +89,16 @@ function checkDiagonal(board: Array<Array<number>>, rowBoard: number, columnBoar
     return count >= 4;
 }
 
-function checkDraw(tablero) {
-    // Recorre cada fila y columna para verificar si hay alguna celda vacía
+function checkDraw(tablero: Array<Array<number>>) {
+
     for (let row = 0; row < tablero.length; row++) {
         for (let col = 0; col < tablero[row].length; col++) {
             if (tablero[row][col] === null) {
-                return false; // Hay al menos una celda vacía, no es empate
+                return false;
             }
         }
     }
 
-    // Si no hay celdas vacías, es empate
+
     return true;
 }

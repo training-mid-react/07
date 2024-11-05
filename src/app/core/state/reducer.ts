@@ -12,7 +12,7 @@ export const reducer = (state: IState, action: IAction) => {
 
     const cases = { ...tableroCases }
 
-    return cases[action.type](state, action.payload) || state;
+    return cases[action.type](state, action?.payload) || state;
 
 
 }

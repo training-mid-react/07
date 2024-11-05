@@ -21,11 +21,9 @@ const Tablero = ({ handleSelectColumn }: Props) => {
                         key={`${rowIndex}-${colIndex}`}
                         className={`tablero__celda`}
                         onClick={() =>
-                            // onColumnaClick(colIndex)
                             handleSelectColumn(colIndex + 1)
                         }
                     >
-                        {/* Representación de la ficha */}
                         {celda && <div className={`ficha ficha--jugador${celda}`}></div>}
                     </div>
                 ))

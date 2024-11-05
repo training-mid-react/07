@@ -9,13 +9,10 @@ export default function HomeContainer() {
 
     const { currentPlayer, isAWinner, winnerPlayer, handleClickButton, handleResetGame } = useGetTablero()
 
-    console.log({ isAWinner, winnerPlayer })
-
     return (
         <LayoutMain>
 
-            <Cabecera />
-            <h3>Turno del jugador: {currentPlayer}</h3>
+            <Cabecera currentPlayer={currentPlayer} />
             <Tablero handleSelectColumn={handleClickButton} />
             {isAWinner && winnerPlayer != -1 && <h1>Ganaste Jugador {winnerPlayer}</h1>}
             {isAWinner && <button onClick={handleResetGame}>Restablecer Juego</button>}
