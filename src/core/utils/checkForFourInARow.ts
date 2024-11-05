@@ -1,8 +1,8 @@
 import { directions } from '../constants';
-import { Board, PLAYER } from '../interfaces';
+import { IBoard, PLAYER } from '../interfaces';
 
 export const checkForFourInARow = (
-  board: Board,
+  board: IBoard,
   row: number,
   col: number,
   player: PLAYER

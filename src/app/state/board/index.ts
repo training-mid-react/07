@@ -1,12 +1,9 @@
-import {
-  GAME_ACTIONS,
-  GameActionReducer,
-  GameState,
-  PLAYER,
-} from '../../../core/interfaces';
-import { checkForFourInARow } from '../../../core/utils/checkForFourInARow';
+import { PLAYER } from "../../../core/interfaces";
+import { IState } from "../../../core/interfaces/state";
+import { checkForFourInARow } from "../../../core/utils/checkForFourInARow";
+import { boardActions } from "./actions";
 
-export const initialState: GameState = {
+export const boardInitialState: IState = {
   board: Array(6).fill(Array(7).fill(null)),
   currentPlayer: PLAYER.PLAYER1,
   winner: null,
@@ -14,13 +11,9 @@ export const initialState: GameState = {
   isDropping: false,
 };
 
-export const gameReducer = (
-  state: GameState,
-  action: GameActionReducer
-): GameState => {
-  switch (action.type) {
-    case GAME_ACTIONS.DROP_TOKEN: {
-      const { columnIndex } = action;
+export const boardCases = {
+  [boardActions.DROP_TOKEN]: (state: IState, payload: number) => {
+    const columnIndex = payload;
 
       const newBoard = state.board.map((row) => [...row]);
 
@@ -58,10 +51,10 @@ export const gameReducer = (
         isDraw,
         isDropping: true,
       };
-    }
-    case GAME_ACTIONS.RESET_GAME:
-      return initialState;
-    default:
-      return state;
-  }
+  },
+  [boardActions.RESET_GAME]: () => {
+    return {
+      ...boardInitialState
+    };
+  },
 };

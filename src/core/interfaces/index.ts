@@ -1,17 +1,9 @@
-export interface CellProps {
-  value: PLAYER | null;
-}
-
-export interface ColumnProps {
-  columnIndex: number;
-}
-
 export enum PLAYER {
   PLAYER1 = 'player1',
   PLAYER2 = 'player2',
 }
 export type Cell = PLAYER | null;
-export type Board = Cell[][];
+export type IBoard = Cell[][];
 
 export enum GAME_ACTIONS {
   DROP_TOKEN = 'DROP_TOKEN',
@@ -23,7 +15,7 @@ export type GameActionReducer =
   | { type: 'RESET_GAME' };
 
 export interface GameState {
-  board: Board;
+  board: IBoard;
   currentPlayer: PLAYER;
   winner: PLAYER | null;
   isDraw: boolean;
@@ -32,9 +24,4 @@ export interface GameState {
 
 export interface GameProviderProps {
   children: React.ReactNode | React.ReactNode[];
-}
-
-export interface GameContextProps {
-  state: GameState;
-  dispatch: React.Dispatch<any>;
 }
