@@ -1,0 +1,40 @@
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 7 / 6;
+
+
+    &__celda {
+        background-color: #f1f1f1;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+.ficha {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+
+
+    &--jugador1 {
+        background-color: red;
+        /* Ficha roja */
+    }
+
+    &--jugador2 {
+        background-color: yellow;
+        /* Ficha amarilla */
+    }
+}

@@ -9,6 +9,7 @@ export const tableroActionTypes = {
     DROP_COIN: "DROP_COIN",
     HANDLE_CLICK: "HANDLE_CLICK",
     VERIFY_WIN: "VERIFY_WIN",
+    VERIFY_DRAW: "VERIFY_DRAW",
     CHANGE_TURN: "CHANGE_TURN",
 };
 
@@ -48,10 +49,16 @@ export const handleClick = (state: GameState) => {
     }
 };
 
-
 export const verifyWin = (state: GameState) => {
     return {
         type: tableroActionTypes.VERIFY_WIN,
+        payload: state
+    }
+}
+
+export const verifyDraw = (state: GameState) => {
+    return {
+        type: tableroActionTypes.VERIFY_DRAW,
         payload: state
     }
 }

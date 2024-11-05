@@ -50,10 +50,6 @@ export const tableroCases = {
                 placedRow = row;
                 placedColumn = payload;
                 //   // Actualizar el tablero y alternar el turno del jugador
-                //   setBoard(auxBoard);
-                //   setIsPlayerOneTurn(!isPlayerOneTurn);
-
-                //   // Romper el bucle una vez que se haya colocado la ficha
                 break;
             }
         }
@@ -92,13 +88,22 @@ export const tableroCases = {
         return {
             ...state,
             isThereWinner: isAWinner,
-            winnerPLayer: isPlayerOneTurn ? 1 : 2
+            winnerPlayer: isPlayerOneTurn ? 1 : 2
         }
 
 
+    },
+
+
+    [tableroActionTypes.VERIFY_DRAW]: (state: GameState) => {
+
+        return {
+            ...state,
+            isThereWinner: false,
+            winnerPlayer: -1
+        }
+
     }
-
-
 
 }
 

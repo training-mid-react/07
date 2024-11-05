@@ -1,31 +1,32 @@
 import { LayoutMain } from "../ui/LayoutMain";
 import { useGetTablero } from "../core/hooks/useGetTablero";
-import { useRef } from "react";
+
+import Tablero from '../ui/LayoutMain/components/Tablero/index';
+import Cabecera from '../ui/LayoutMain/components/Cabecera/index';
 
 
 export default function HomeContainer() {
 
-    const inputRef = useRef(null)
+    const { currentPlayer, isAWinner, winnerPlayer, handleClickButton, handleResetGame } = useGetTablero()
 
-
-    const { currentPlayer, isAWinner, handleClickButton, handleResetGame } = useGetTablero()
+    console.log({ isAWinner, winnerPlayer })
 
     return (
         <LayoutMain>
-            <>
-                <div>Jugador {currentPlayer}</div>
-                <input type="number" max={7} min={1} ref={inputRef} />
-                {isAWinner
-                    ? <button onClick={handleResetGame}>Restablecer Juego</button>
-                    : <button onClick={() => handleClickButton(inputRef.current.value)}>Click me</button>
-                }
 
-
-                {isAWinner && alert(`Ganaste Jugador ${currentPlayer ? 1 : 2}`)}
-
-            </>
+            <Cabecera />
+            <h3>Turno del jugador: {currentPlayer}</h3>
+            <Tablero handleSelectColumn={handleClickButton} />
+            {isAWinner && winnerPlayer != -1 && <h1>Ganaste Jugador {winnerPlayer}</h1>}
+            {isAWinner && <button onClick={handleResetGame}>Restablecer Juego</button>}
+            {
+                !isAWinner && winnerPlayer == -1 &&
+                <>
+                    <h1>Empate</h1>
+                    <button onClick={handleResetGame}>Restablecer Juego</button>
+                </>
+            }
         </LayoutMain >
-
     )
 
 }

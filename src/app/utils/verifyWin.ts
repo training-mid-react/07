@@ -1,4 +1,5 @@
 import { GameState } from "../core/interfaces/gameState";
+import { verifyDraw } from '../core/state/tablero/actions';
 
 export const verifyWinUser = (state: GameState) => {
 
@@ -15,13 +16,21 @@ export const verifyWinUser = (state: GameState) => {
 }
 
 
+export const verifyDrawUser = (state: GameState) => {
+    const { tablero } = state
+    return (
+        checkDraw(tablero)
+    )
+}
+
+
 function checkVerticalWin(board: Array<Array<number>>, rowBoard: number, columnBoard: number, player: number) {
     let count = 1;
-    let r = rowBoard + 1;
+    let row = rowBoard + 1;
 
-    while (r < board.length && board[r][columnBoard] === player) {
+    while (row < board.length && board[row][columnBoard] === player) {
         count++;
-        r++;
+        row++;
     }
 
     // console.log({ count })
@@ -53,15 +62,15 @@ function checkHorizontalWin(board: Array<Array<number>>, rowBoard: number, colum
 }
 
 function checkDiagonal(board: Array<Array<number>>, rowBoard: number, columnBoard: number, player: number) {
-    let count = 1; // Comenzamos contando la ficha actual
+    let count = 1;
 
     // Diagonal descendente hacia la derecha (\)
-    let r = rowBoard + 1;
-    let c = columnBoard + 1;
-    while (r < board.length && c < board[0].length && board[r][c] === player) {
+    let row = rowBoard + 1;
+    let column = columnBoard + 1;
+    while (row < board.length && column < board[0].length && board[row][column] === player) {
         count++;
-        r++;
-        c++;
+        row++;
+        column++;
     }
 
     if (count >= 4) return true;
@@ -70,14 +79,27 @@ function checkDiagonal(board: Array<Array<number>>, rowBoard: number, columnBoar
     count = 1;
 
     // Diagonal descendente hacia la izquierda (/)
-    r = rowBoard + 1;
-    c = columnBoard - 1;
-    while (r < board.length && c >= 0 && board[r][c] === player) {
+    row = rowBoard + 1;
+    column = columnBoard - 1;
+    while (row < board.length && column >= 0 && board[row][column] === player) {
         count++;
-        r++;
-        c--;
+        row++;
+        column--;
     }
 
     return count >= 4;
 }
 
+function checkDraw(tablero) {
+    // Recorre cada fila y columna para verificar si hay alguna celda vacía
+    for (let row = 0; row < tablero.length; row++) {
+        for (let col = 0; col < tablero[row].length; col++) {
+            if (tablero[row][col] === null) {
+                return false; // Hay al menos una celda vacía, no es empate
+            }
+        }
+    }
+
+    // Si no hay celdas vacías, es empate
+    return true;
+}

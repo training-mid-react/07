@@ -1,4 +1,6 @@
 import { ReactNode } from 'react';
+import "./style.scss"
+
 
 interface Props {
     children: ReactNode | ReactNode[];
@@ -7,7 +9,7 @@ interface Props {
 
 export const LayoutMain = ({ children }: Props) => {
     return (
-        <div>
+        <div className='layout-main'>
             {children}
         </div>
     );
