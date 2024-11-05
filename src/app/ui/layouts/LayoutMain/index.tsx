@@ -15,9 +15,9 @@ export const LayoutMain = ({ header, scoreboard, children }: Props) => {
         {header}     
       </header>
       <main className='layout-main__content'>
-        <div className='layout-main__scoreboard'>
+        <section className='layout-main__scoreboard'>
           {scoreboard}
-        </div>
+        </section>
 
         <section>
           {children}        

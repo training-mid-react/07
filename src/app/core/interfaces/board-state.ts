@@ -5,10 +5,10 @@ export const WINNING_LENGTH = 4;
 
 export interface IBoardGameState {
     board: BoardMatrix;
-    currentPlayer: Player;
+    currentPlayer:  Exclude<Player, 'draw'>;
     winner: Player;
 }
 
 export type BoardMatrix = Cell[][];
-export type Cell = Player;
+export type Cell =  Exclude<Player, 'draw'>;
 export type Player = null | 'player1' | 'player2' | 'draw'
