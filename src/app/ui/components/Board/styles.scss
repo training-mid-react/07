@@ -1,0 +1,47 @@
+.board {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #5454564b;
+    height: 100%;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.221);
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &:hover {
+            position: relative;
+
+            &:hover::before {
+                position: absolute;
+                top: -1rem;
+                content: '';
+                width: 0;
+                height: 0;
+                border-top: 25px solid black;
+                border-right: 25px solid transparent;
+                border-left: 25px solid transparent;
+                border-bottom: 0;
+            }
+        }
+    }
+
+    .falling {
+        animation: fall 0.8s ease-out;
+    }
+
+    @keyframes fall {
+        from {
+            transform: translateY(-350px);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+}
