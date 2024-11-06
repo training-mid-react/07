@@ -1,8 +1,9 @@
-import { LayoutMain } from "../ui/LayoutMain";
+import { LayoutMain } from "../ui/layouts/LayoutMain";
 import { useGetTablero } from "../core/hooks/useGetTablero";
+import Cabecera from "../ui/components/Cabecera";
+import Tablero from "../ui/components/Tablero";
 
-import Tablero from '../ui/LayoutMain/components/Tablero/index';
-import Cabecera from '../ui/LayoutMain/components/Cabecera/index';
+
 
 
 export default function HomeContainer() {

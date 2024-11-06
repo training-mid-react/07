@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { AppContext } from "../../../../core/state/AppContext"
+import { AppContext } from "../../../core/state/AppContext"
 import "./style.scss"
 
 
