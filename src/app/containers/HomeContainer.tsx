@@ -31,6 +31,7 @@ export default function HomeContainer() {
           <Board 
             board={board} 
             handleSelectColumn={handleColumnClick} 
+            currentPlayer={currentPlayer}
           />
           {(winner) && (
             <Modal
