@@ -1,2 +1,3 @@
 export * from './board-game';
-export * from './home';
+export * from './form';
+export * from './home-container';

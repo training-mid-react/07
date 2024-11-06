@@ -1,13 +1,8 @@
 import { IPlayerForm } from '@core/interfaces';
-import { AppContext } from '@core/state/AppContext';
-import { setPlayeres } from '@core/state/board-game/actions';
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 
-export const useHome = () => {
-    const { dispatch } = useContext(AppContext);
-    const navigate = useNavigate();
+export const useform = () => {
     const {
         register,
         setError,
@@ -25,16 +20,6 @@ export const useHome = () => {
         { value: 'blue', label: 'Azul' },
     ];
 
-    const onSubmit = (data: IPlayerForm) => {
-        dispatch(
-            setPlayeres([
-                { ...data.player1, id: 1, isCurrentPlayer: true },
-                { ...data.player2, id: 2 },
-            ])
-        );
-        navigate('/board-game');
-    };
-
     useEffect(() => {
         if (player1Color && player2Color && player1Color === player2Color) {
             setError('player1.color', {
@@ -48,5 +33,5 @@ export const useHome = () => {
         }
     }, [player1Color, player2Color]);
 
-    return { selectOptions, errors, register, handleSubmit, onSubmit };
+    return { selectOptions, errors, register, handleSubmit };
 };
