@@ -3,3 +3,34 @@
     flex-direction: $flex-direction;
     align-items: center;
 }
+
+@keyframes fallThrough {
+    0% {
+      transform: translateY(-400px);
+      opacity: 0;
+    }
+    60% {
+      opacity: 0.5;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+};
+
+  @mixin animation-fall-through {
+    animation: fallThrough 0.5s forwards ease-in;
+};
+
+  @mixin cell-style($background-color) {
+    background-color: $background-color;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

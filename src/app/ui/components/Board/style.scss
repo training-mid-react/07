@@ -1,50 +1,37 @@
-@use '../../styles/variables' as var; 
+@use '../../styles/variables' as var;
+@use '../../styles/mixins' as mix;
 
-.board {
-  background-color: var.$color-dark-purple-2;
+.board-container {
+  gap: 20px;
   display: grid;
-  gap: 15px;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  padding: 20px;
+  grid-template-columns: repeat(3, 1fr);
+
+  .board {
+    background-color: var.$color-dark-purple-2;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    padding: 20px;
+  }
 }
 
 .cell {
-  align-items: center;
-  background-color: var.$color-white;
-  border-radius: 50%;
-  display: flex;
-  height: 50px;
-  justify-content: center;
   transition: background-color 0.3s ease;
-  width: 50px;
+  @include mix.cell-style(var.$color-white);
 
   &.cell-1 {
-    animation: fallThrough 0.5s forwards ease-in;
-    background-color: var.$color-light-purple;
+    @include mix.cell-style(var.$color-light-purple);
+    @include mix.animation-fall-through;
   }
 
   &.cell-2 {
-    animation: fallThrough 0.5s forwards ease-in; 
-    background-color: var.$color-green;
+    @include mix.cell-style(var.$color-green);
+    @include mix.animation-fall-through;
   }
 
   &.disabled {
     pointer-events: none;
     opacity: 0.6;
-  }
-}
-
-@keyframes fallThrough {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
   }
 }

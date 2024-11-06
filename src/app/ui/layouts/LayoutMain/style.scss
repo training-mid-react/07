@@ -1,8 +1,9 @@
-@use '../../styles/' as mix;
+@use '../../styles/mixins' as mix;
 
 .layout-main {
-    justify-content: center;
+    gap: 10px;
     min-height: 100vh;
+    padding: 1rem;
     @include mix.flex();
   }
   
