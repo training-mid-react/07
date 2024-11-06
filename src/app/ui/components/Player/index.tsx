@@ -1,22 +1,25 @@
 import { IPlayer } from "@/app/core/interfaces/player.interface";
 import { InputText } from "../../forms/inputText";
 import "./style.scss"
+import { InputColor } from "../../forms/inputColor";
 
-interface Props{
+interface Props {
     player: IPlayer;
     value: string;
-    name: string;
-    onChangeInput: (name: string, value: string) => void;
-    handleBlurInput: (name: string) => void
+    onChangeInput: (value: string) => void;
+    handleBlurInput: () => void
 }
 
-const Player = ({player, value, name, onChangeInput, handleBlurInput}: Props) => {
-    return ( 
+const Player = ({ player, value, onChangeInput, handleBlurInput }: Props) => {
+    return (
         <article className="player">
-            <h2>{player.name}</h2>
-            <InputText value={value} onChange={onChangeInput} placeholder="Escribe tu nombre" name={name} handleBlurInput={handleBlurInput}  />
+            <div className="player__flex">
+                <InputColor color={player.color} isDisabled={true} />
+                <h2>{player.name}</h2>
+            </div>
+            <InputText value={value} onChange={onChangeInput} placeholder="Escribe tu nombre" handleBlurInput={handleBlurInput} />
         </article>
-     );
+    );
 }
- 
+
 export default Player;

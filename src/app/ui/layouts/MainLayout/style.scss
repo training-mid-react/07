@@ -14,8 +14,11 @@
         font-size: 1.8rem;
         color: #fff;
         span{
-            color: #5679f7;
+            // color: #5679f7;
             font-weight: bold;
+            font-size: 2rem;
+            transition: all 0.3s ease-in-out;
+            animation: fadeIn 1s ease-in-out;
         }
     }
     &__content{
@@ -26,3 +29,15 @@
         padding-inline: 20px;
     }
 }
+
+/* Animación de entrada: Fade-in */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      font-size: 0;
+    }
+    to {
+      opacity: 1;
+      font-size: 2rem;
+    }
+  }

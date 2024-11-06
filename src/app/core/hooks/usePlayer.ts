@@ -2,48 +2,37 @@ import { useContext, useEffect, useState } from "react";
 import { GameContext } from "../state/gameContext";
 import { changePlayer } from "../state/game/actions";
 import { changeNamePlayer } from "../state/players/actions";
+import { IPlayer } from "../interfaces/player.interface";
 
-export const usePlayer = () => {
+interface Props {
+    player: IPlayer;
+}
+
+export const usePlayer = ({ player }: Props) => {
     const { state, dispatch } = useContext(GameContext);
 
-    const [values, setValues] = useState({
-        player1: state.player1,
-        player2: state.player2,
-    });
+    const [name, setName] = useState("");
 
-    const handleChangeInput = (name: string, value: string) => {
-        if (name === "player1" || name === "player2") {
-            const player = { ...values[name as "player1" | "player2"], name: value };
-            setValues({
-                ...values,
-                [name]: player
-            });
-
-        }
+    const handleChangeInput = (value: string) => {
+        setName(value)
     }
 
-    const handleBlurInput = (name: string) => {
-        console.log("aqui");
-        if (name === "player1" || name === "player2") {
-            const player = values[name as "player1" | "player2"];
-            console.log("player");
-            console.log(player);
-            
-            dispatch(changeNamePlayer(player));
-            if(state.playerActive.id === player.id) dispatch(changePlayer(player))
-        };
+    const handleBlurInput = () => {
+        const newPlayer = {...player, name}
+        dispatch(changeNamePlayer(newPlayer));
+        if (state.playerActive.id === newPlayer.id) dispatch(changePlayer(newPlayer))
+
     }
 
-    useEffect(()=>{
-        setValues({
-            player1: state.player1,
-            player2: state.player2
-        })
-    },[state.player1, state.player2])
+    useEffect(() => {
+        setName("")
+    }, [state.player1, state.player2])
 
     return {
-        values,
+        name,
         handleChangeInput,
-        handleBlurInput
+        handleBlurInput,
+        player1: state.player1,
+        player2: state.player2
     }
 }
