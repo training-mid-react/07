@@ -15,7 +15,7 @@ export default function HomeContainer() {
   } = useGameLogic();
 
   return (
-    <div className='board_wrapper'>
+    <div className='home_container'>
       <CurrentPlayer
         currentPlayer={currentPlayer}
       />
