@@ -1,0 +1,24 @@
+.current-player {
+    font-size: 28px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    margin-top: 8px;
+  }
+  
+  .current-player__player1 {
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(135deg, rgba(108, 108, 224, 0.589), rgba(168, 168, 207, 0.589));
+    padding: 12px;
+    border-radius: 4px;
+  }
+  
+  .current-player__player2 {
+    color: rgb(4, 94, 4);
+    font-weight: bold;
+    background: linear-gradient(135deg, rgb(123, 204, 123), rgb(4, 94, 4));
+    padding: 12px;
+    border-radius: 4px;
+  }
+  

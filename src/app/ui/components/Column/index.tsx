@@ -1,23 +1,44 @@
-import React from 'react';
-import './style.scss'
+import { useState, useEffect } from 'react';
+import './style.scss';
 
 interface ColumnProps {
-    columnIndex: number;
-    dropPiece: (column: number) => void;
-    columnData: number[];
+  columnIndex: number;
+  dropPiece: (column: number) => void;
+  columnData: number[];
 }
 
 function Column({ columnIndex, dropPiece, columnData }: ColumnProps) {
-    return (
-        <div className="column" onClick={() => dropPiece(columnIndex)}>
-            {columnData.reverse().map((cell, rowIndex) => (
-                <div
-                    key={rowIndex}
-                    className={`cell ${cell === 1 ? 'player1' : cell === 2 ? 'player2' : ''}`}
-                />
-            ))}
-        </div>
-    );
+  const [droppingCell, setDroppingCell] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (droppingCell !== null) {
+      setTimeout(() => setDroppingCell(null), 4000);
+    }
+  }, [droppingCell]);
+
+  const handleColumnClick = () => {
+    const rowIndex = columnData.lastIndexOf(0);
+    if (rowIndex !== -1) {
+      setDroppingCell(rowIndex);
+      dropPiece(columnIndex);
+    }
+  };
+
+  return (
+    <div className="column" onClick={handleColumnClick}>
+      {columnData.map((cell, rowIndex) => {
+        const isDropping = droppingCell === rowIndex;
+        const cellClass = `cell ${cell === 1 ? 'cell--player1' : cell === 2 ? 'cell--player2' : ''} ${isDropping ? 'cell--dropping' : ''}`;
+        console.log(cellClass)
+        return (
+          <div
+            key={rowIndex}
+            className={cellClass}
+          />
+        );
+      })}
+    </div>
+  );
 };
 
 export default Column;

@@ -3,26 +3,43 @@
     flex-direction: column;
     cursor: pointer;
     width: 100px;
-    background-color: transparent
-}
+    background-color: transparent;
+  }
 
-.cell {
+  .cell {
     width: 85px;
     height: 80px;
     background: linear-gradient(135deg, rgba(218, 218, 223, 0.918), rgba(83, 83, 92, 0.589));
     border: 1px solid #000;
-}
-
-.cell.player1 {
+    position: relative;
+  }
+  
+  .cell--player1 {
     background: linear-gradient(135deg, rgba(108, 108, 224, 0.589), rgba(168, 168, 207, 0.589));
-}
-
-.cell.player2 {
+  }
+  
+  .cell--player2 {
     background: linear-gradient(135deg, rgb(123, 204, 123), rgb(4, 94, 4));
-}
-
-.winner {
+  }
+  
+  @keyframes dropPiece {
+    0% {
+      transform: translateY(-700px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0); 
+      opacity: 1;
+    }
+  }
+  
+  .cell--dropping {
+    animation: dropPiece 1.2s ease-in-out forwards; 
+  }
+  
+  .winner {
     margin-top: 20px;
     font-size: 24px;
     font-weight: bold;
-}
+  }
+  

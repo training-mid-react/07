@@ -1,4 +1,3 @@
-// src/app/core/state/appcontext.ts
 import React, { createContext, useReducer, useContext, ReactNode } from 'react';
 import { gameReducer } from './reducers';
 import { IAppContextProps, IGameState } from '../interfaces/state';
