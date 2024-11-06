@@ -1,5 +1,3 @@
-import { GameState } from "../../interfaces/gameState";
-
 export const tableroActionTypes = {
     SET_TABLERO: "SET_TABLERO",
     SET_TABLERO_ROW: "SET_TABLERO_ROW",
@@ -26,10 +24,10 @@ export const resetTablero = () => {
     };
 };
 
-export const changeTurn = (payload: GameState) => {
+export const changeTurn = () => {
     return {
         type: tableroActionTypes.CHANGE_TURN,
-        payload
+        // payload
     };
 };
 
@@ -40,25 +38,25 @@ export const handleDrop = (columnDropped: number) => {
     }
 };
 
-export const handleClick = (state: GameState) => {
+export const handleClick = () => {
 
     return {
         type: tableroActionTypes.HANDLE_CLICK,
-        payload: state
+        // payload: state
 
     }
 };
 
-export const verifyWin = (state: GameState) => {
+export const verifyWin = () => {
     return {
         type: tableroActionTypes.VERIFY_WIN,
-        payload: state
+        // payload: state
     }
 }
 
-export const verifyDraw = (state: GameState) => {
+export const verifyDraw = () => {
     return {
         type: tableroActionTypes.VERIFY_DRAW,
-        payload: state
+        // payload: state
     }
 }

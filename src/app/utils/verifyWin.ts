@@ -15,8 +15,8 @@ export const verifyWinUser = (state: GameState) => {
 }
 
 
-export const verifyDrawUser = (state: GameState) => {
-    const { tablero } = state
+export const verifyDrawUser = (tablero: Array<Array<number>>) => {
+
     return (
         checkDraw(tablero)
     )

@@ -1,7 +1,11 @@
+$columnas: 7;
+$filas: 6;
+$color-tablero: #007bff; // Color azul para el tablero
+
 .tablero {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat($columnas, 1fr);
+    grid-template-rows: repeat($filas, 1fr);
     gap: 5px;
     background-color: #007bff;
     padding: 10px;
@@ -21,12 +25,28 @@
 
 }
 
+@keyframes caer {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
 
 .ficha {
     width: 80%;
     height: 80%;
     border-radius: 50%;
-
+    position: relative;
+    top: 0;
+    transform: translateY(-100%);
+    /* Punto de inicio fuera del tablero */
+    animation: caer 0.5s ease-out forwards;
+    /* La animación solo sucede una vez */
 
     &--jugador1 {
         background-color: red;

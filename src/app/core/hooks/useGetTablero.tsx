@@ -23,22 +23,22 @@ export const useGetTablero = () => {
             inputColumn -= 1;
         }
 
-        // console.log({ state })
+
 
         dispatch(handleDrop(inputColumn))
-        dispatch(handleClick(state))
+        dispatch(handleClick())
 
 
-        const isADraw = verifyDrawUser(state)
+        const isADraw = verifyDrawUser(state.tablero)
         if (isADraw) {
-            dispatch(verifyDraw(state))
+            dispatch(verifyDraw())
             return
         }
 
-        dispatch(verifyWin(state))
+        dispatch(verifyWin())
 
         if (!state.isThereWinner) {
-            dispatch(changeTurn(state))
+            dispatch(changeTurn())
         }
     }
 

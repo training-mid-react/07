@@ -19,7 +19,7 @@ const Tablero = ({ handleSelectColumn }: Props) => {
                 fila.map((celda, colIndex) => (
                     <div
                         key={`${rowIndex}-${colIndex}`}
-                        className={`tablero__celda`}
+                        className={`tablero__celda fila${rowIndex + 1}`}
                         onClick={() =>
                             handleSelectColumn(colIndex + 1)
                         }
