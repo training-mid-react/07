@@ -15,19 +15,22 @@
     padding: 20px;
   }
 }
-
 .cell {
-  transition: background-color 0.3s ease;
   @include mix.cell-style(var.$color-white);
+  position: relative; 
+  transition: background-color 0.3s ease;
 
-  &.cell-1 {
-    @include mix.cell-style(var.$color-light-purple);
+  &.cell-1::after,
+  &.cell-2::after {
     @include mix.animation-fall-through;
   }
 
-  &.cell-2 {
-    @include mix.cell-style(var.$color-green);
-    @include mix.animation-fall-through;
+  &.cell-1::after {
+    background-color: var.$color-light-purple;
+  }
+
+  &.cell-2::after {
+    background-color: var.$color-green;
   }
 
   &.disabled {

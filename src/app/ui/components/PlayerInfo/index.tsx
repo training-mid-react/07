@@ -11,7 +11,7 @@ const PlayerInfo: React.FC = () => {
   return (
     <div className="player-info">
       {players.map((player) => (
-        <div key={player.name} className="player-info-item">
+        <div key={player.name} className="player-info_item">
           <Title as="h4">{player.name}</Title>
           <div className={`cell ${player.cellClass}`}></div>
         </div>
