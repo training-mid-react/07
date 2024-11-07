@@ -9,11 +9,11 @@ const players = [
 
 const PlayerInfo: React.FC = () => {
   return (
-    <div className="player-info">
+    <div className="player-info" data-testid="player-info">
       {players.map((player) => (
-        <div key={player.name} className="player-info_item">
-          <Title as="h4">{player.name}</Title>
-          <div className={`cell ${player.cellClass}`}></div>
+        <div key={player.name} className="player-info_item" data-testid={`player-info_item-${player.cellClass}`}>
+          <Title as="h4" data-testid={`player-info_item-${player.cellClass}`}>{player.name}</Title>
+          <div className={`cell ${player.cellClass}`}data-testid={`player-cell-${player.name}`}></div>
         </div>
       ))}
     </div>

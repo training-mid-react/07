@@ -1,6 +1,5 @@
 import React from 'react';
 import Title from '@components/Title';
-import '@styles/_variables.scss';
 import './style.scss';
 
 interface TurnInfoProps {
@@ -8,10 +7,11 @@ interface TurnInfoProps {
 }
 
 const TurnInfo: React.FC<TurnInfoProps> = ({ currentPlayer }) => {
-
   return (
-    <div className="turn-info">
-      <Title as="h3">Turno de {currentPlayer}</Title>
+    <div className="turn-info" data-testid="turn-info">
+      <Title as="h3">
+        Turno de {currentPlayer}
+      </Title>
     </div>
   );
 };

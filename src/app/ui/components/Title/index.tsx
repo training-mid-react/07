@@ -8,7 +8,7 @@ interface TitleProps {
 }
 
 const Title: React.FC<TitleProps> = ({ as: Tag, children, className }) => {
-  return <Tag className={className || 'title'}>{children}</Tag>;
+  return <Tag data-testid="title-component" className={className || 'title'}>{children}</Tag>;
 };
 
 export default Title;
