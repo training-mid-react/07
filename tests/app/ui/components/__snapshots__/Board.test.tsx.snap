@@ -1,0 +1,322 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Board > Match snapshoot 1`] = `
+<DocumentFragment>
+  <div
+    class="board"
+  >
+    <div
+      class="board__column"
+    >
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content falling"
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+    </div>
+    <div
+      class="board__column"
+    >
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content falling"
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+    </div>
+    <div
+      class="board__column"
+    >
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+    </div>
+    <div
+      class="board__column"
+    >
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+    </div>
+    <div
+      class="board__column"
+    >
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content falling"
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+    </div>
+    <div
+      class="board__column"
+    >
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: blue;"
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+          style="background-color: red;"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

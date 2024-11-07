@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Square > Match snapshoot 1`] = `
+<DocumentFragment>
+  <div
+    class="board__square"
+  >
+    <div
+      class="board__square__content "
+    />
+  </div>
+</DocumentFragment>
+`;
