@@ -1,20 +1,5 @@
-import { AppContext } from '@core/state/AppContext';
-import { resetState } from '@core/state/board-game/actions';
-import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { FC } from 'react';
 
-export const ResetButton = () => {
-    const navigate = useNavigate();
-    const { dispatch } = useContext(AppContext);
-
-    return (
-        <button
-            onClick={() => {
-                dispatch(resetState());
-                navigate('/');
-            }}
-        >
-            Reiniciar juego
-        </button>
-    );
-};
+export const ResetButton: FC<{ onClickResetButton: () => void }> = ({
+    onClickResetButton,
+}) => <button onClick={onClickResetButton}>Reiniciar juego</button>;

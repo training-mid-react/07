@@ -18,7 +18,7 @@
         &:hover {
             position: relative;
 
-            &:hover::before {
+            &::before {
                 position: absolute;
                 top: -1rem;
                 content: '';

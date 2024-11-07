@@ -1,20 +1,27 @@
 import { ROWS } from '@core/constants';
 import { AppContext } from '@core/state/AppContext';
 import {
+    resetState,
     setPlayeres,
     setWinner,
     updateBoard,
 } from '@core/state/board-game/actions';
 import { checkWinner } from '@core/utils';
 import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export const useBoardGame = () => {
+export const useBoardContainer = () => {
     const { state, dispatch } = useContext(AppContext);
-    const [fallingCells, setFallingCells] = useState<string[]>([]);
-
+    const navigate = useNavigate();
     const winner = state.winner;
     const board = state.board;
     const players = state.players;
+    const [fallingCells, setFallingCells] = useState<string[]>([]);
+
+    const onClickResetButton = () => {
+        dispatch(resetState());
+        navigate('/');
+    };
 
     const handleClick = (col: number) => {
         if (winner) return;
@@ -54,12 +61,5 @@ export const useBoardGame = () => {
             }
         }
     };
-
-    return {
-        players,
-        winner,
-        board,
-        fallingCells,
-        handleClick,
-    };
+    return { state, onClickResetButton, fallingCells, handleClick };
 };

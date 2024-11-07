@@ -1,10 +1,11 @@
-import { useBoardGame } from '@core/hooks';
 import { IGuardProps } from '@core/interfaces';
-import { useEffect } from 'react';
+import { AppContext } from '@core/state/AppContext';
+import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export const Guard = ({ children }: IGuardProps) => {
-    const { players } = useBoardGame();
+    const { state } = useContext(AppContext);
+    const players = state.players;
     const navigate = useNavigate();
 
     useEffect(() => {

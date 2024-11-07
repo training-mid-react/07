@@ -2,14 +2,21 @@
     "compilerOptions": {
         "target": "ES2020",
         "useDefineForClassFields": true,
-        "lib": ["ES2020", "DOM", "DOM.Iterable"],
+        "lib": [
+            "ES2020",
+            "DOM",
+            "DOM.Iterable"
+        ],
         "module": "ESNext",
         "skipLibCheck": true,
         "paths": {
-            "@ui/*": ["./src/app/ui/*"],
-            "@core/*": ["./src/app/core/*"]
+            "@ui/*": [
+                "./src/app/ui/*"
+            ],
+            "@core/*": [
+                "./src/app/core/*"
+            ]
         },
-
         /* Bundler mode */
         "moduleResolution": "Bundler",
         "allowImportingTsExtensions": true,
@@ -17,7 +24,6 @@
         "moduleDetection": "force",
         "noEmit": true,
         "jsx": "react-jsx",
-
         /* Linting */
         "strict": true,
         "noUnusedLocals": true,
@@ -25,5 +31,8 @@
         "noFallthroughCasesInSwitch": true,
         "noUncheckedSideEffectImports": true
     },
-    "include": ["src"]
+    "include": [
+        "src",
+        "./src/setupTests.ts"
+    ]
 }

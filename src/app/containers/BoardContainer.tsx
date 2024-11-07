@@ -1,14 +1,18 @@
-import { AppContext } from '@core/state/AppContext';
+import { useBoardContainer } from '@core/hooks';
 import { Game } from '@ui/components/Game';
 import { LayoutBoard } from '@ui/layouts/LayoutBoard/LayoutBoard';
-import { useContext } from 'react';
 
 export const BoardContainer = () => {
-    const { state } = useContext(AppContext);
-
+    const { state, onClickResetButton, fallingCells, handleClick } =
+        useBoardContainer();
     return (
         <LayoutBoard>
-            <Game state={state} />
+            <Game
+                state={state}
+                onClickResetButton={onClickResetButton}
+                fallingCells={fallingCells}
+                handleClick={handleClick}
+            />
         </LayoutBoard>
     );
 };

@@ -2,7 +2,10 @@ import { FC } from 'react';
 import { IState } from '@core/interfaces';
 import { ResetButton } from '../ResetButton';
 
-export const HeaderBoard: FC<{ state: IState }> = ({ state }) => (
+export const HeaderBoard: FC<{
+    state: IState;
+    onClickResetButton: () => void;
+}> = ({ state, onClickResetButton }) => (
     <div className="board-layout__header">
         <section>
             <h3>Jugadores:</h3>
@@ -22,6 +25,6 @@ export const HeaderBoard: FC<{ state: IState }> = ({ state }) => (
                   } es tu turno`}
         </h1>
 
-        <ResetButton />
+        <ResetButton onClickResetButton={onClickResetButton} />
     </div>
 );
