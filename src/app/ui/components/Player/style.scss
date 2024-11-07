@@ -1,0 +1,14 @@
+.player {
+    h2 {
+        color: #fff;
+        text-align: center;
+        margin-left: 5px;
+    }
+    
+    &__flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}

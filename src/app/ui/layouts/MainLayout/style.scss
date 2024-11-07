@@ -1,0 +1,43 @@
+@use "../../styles/variables.scss" as variables;
+.layout {
+    height: 100dvh;
+    background-color:  variables.$background-section;
+    padding-block: 60px;
+    &__title{
+        text-align: center;
+        font-size: 2.2rem;
+        color: #fff;
+    }
+    &__player{
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.8rem;
+        color: #fff;
+        span{
+            // color: #5679f7;
+            font-weight: bold;
+            font-size: 2rem;
+            transition: all 0.3s ease-in-out;
+            animation: fadeIn 1s ease-in-out;
+        }
+    }
+    &__content{
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding-inline: 20px;
+    }
+}
+
+/* Animación de entrada: Fade-in */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      font-size: 0;
+    }
+    to {
+      opacity: 1;
+      font-size: 2rem;
+    }
+  }
