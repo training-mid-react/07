@@ -41,11 +41,8 @@ export const Board = ({board, handleSelectColumn, currentPlayer}: Props) => {
                 return( 
                   <div 
                     key={`cell_${colIndex}`} 
-                    className={`
-                      board__col 
-                      ${cell || ''} 
-                      ${isFalling ? `falling--${currentPlayer}` : ''}
-                    `}
+                    data-testid={`cell_${rowIndex}_${colIndex}`}
+                    className={`board__col ${cell || ''} ${isFalling ? `falling--${currentPlayer}` : ''}`}  
                     onClick={() => handleCellClick(colIndex)}
                     style={isFalling ? animationFall : {}}
                   />

@@ -1,0 +1,46 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ScoreBoard > Matches the snapshot 1`] = `
+<DocumentFragment>
+  <article
+    class="score-board"
+  >
+    <div
+      class="score-board__player"
+    >
+      <div
+        class="score-board__image score-board__image--player1"
+      />
+      <p
+        class="score-board__layer"
+      >
+        Player 1
+      </p>
+    </div>
+    <div
+      class="score-board__player"
+    >
+      <div
+        class="score-board__image score-board__image--player2"
+      />
+      <p
+        class="score-board__layer"
+      >
+        Player 2
+      </p>
+    </div>
+  </article>
+  <section
+    class="current-player"
+  >
+    <h3
+      class="current-player__label"
+    >
+      Turn player1
+    </h3>
+    <div
+      class="current-player__image current-player__image--player1"
+    />
+  </section>
+</DocumentFragment>
+`;
