@@ -37,7 +37,7 @@ describe('Game', () => {
                 fallingCells={[]}
             />
         );
-        screen.debug();
+
         expect(asFragment()).toMatchSnapshot();
     });
 });

@@ -2,6 +2,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Form } from '../../../../src/app/ui/components/Form';
 import { vi } from 'vitest';
 import React from 'react';
+import '@testing-library/jest-dom';
 
 vi.mock('@core/hooks', () => ({
     useform: () => ({
@@ -11,12 +12,20 @@ vi.mock('@core/hooks', () => ({
         ],
         register: jest.fn(),
         handleSubmit: (callback: any) => callback,
-        errors: { player1: { name: { message: 'Nombre es requerido' } } },
+        errors: {},
+        setValue: vi.fn(),
+        getValues: () => ({
+            player1: { name: 'Player 1', color: 'blue' },
+            player2: { name: 'Player 2', color: 'rojo' },
+        }),
     }),
 }));
 
 describe('Form', () => {
-    const mockOnSubmit = vi.fn(() => Promise.resolve());
+    const mockOnSubmit = vi.fn((data) => {
+        console.log(data);
+        Promise.resolve();
+    });
 
     test('Match snapshoot', () => {
         const { asFragment } = render(<Form onSubmit={mockOnSubmit} />);
@@ -53,11 +62,50 @@ describe('Form', () => {
         expect(screen.getByText('Iniciar Juego')).toBeInTheDocument();
     });
 
-    test('function is not called if data is not completed', () => {
+    test('function is not called if data is not completed', async () => {
         const { getByRole } = render(<Form onSubmit={mockOnSubmit} />);
         const button = getByRole('button', { name: /Iniciar Juego/i });
-        fireEvent.click(button);
+        await waitFor(() => fireEvent.click(button));
+
+        const alert = await screen.findAllByText('Nombre es requerido');
+        alert.forEach((a) => expect(a).toBeInTheDocument());
 
         expect(mockOnSubmit).not.toHaveBeenCalled();
+    });
+
+    test('function is called if data is completed', async () => {
+        render(<Form onSubmit={mockOnSubmit} />);
+
+        const { getAllByLabelText, getByRole } = screen;
+
+        const inputsName = getAllByLabelText('Nombre:');
+        const selectColor = getAllByLabelText('Color:');
+        for (const [index, input] of inputsName.entries()) {
+            await waitFor(() =>
+                fireEvent.change(input, {
+                    target: { value: `Player ${index + 1}` },
+                })
+            );
+        }
+        for (const [index, select] of selectColor.entries()) {
+            await waitFor(() =>
+                fireEvent.change(select, {
+                    target: { value: `${index === 0 ? 'blue' : 'red'}` },
+                })
+            );
+        }
+
+        const submitButton = getByRole('button', { name: /Iniciar Juego/i });
+        await waitFor(() => fireEvent.click(submitButton));
+
+        expect(mockOnSubmit).toHaveBeenCalledWith(
+            {
+                player1: { name: 'Player 1', color: 'blue' },
+                player2: { name: 'Player 2', color: 'red' },
+            },
+            expect.objectContaining({
+                type: 'submit',
+            })
+        );
     });
 });

@@ -33,6 +33,6 @@
     },
     "include": [
         "src",
-        "./src/setupTests.ts"
+        "tests/setupTests.ts"
     ]
 }
