@@ -1,6 +1,9 @@
-import { defineConfig } from 'vite'
+// import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
+
 import react from '@vitejs/plugin-react-swc'
-import { path } from 'path';
+
+
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -9,5 +12,10 @@ export default defineConfig({
     alias: {
       '@': '/src'
     }
-  }
+  },
+  test: { // Configuración de Vitest
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './tests/setupTests.ts', // Archivo para configuraciones globales de pruebas (opcional)
+  },
 })

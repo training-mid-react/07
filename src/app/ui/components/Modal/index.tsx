@@ -8,11 +8,12 @@ interface Props {
 
 const Modal = ({ title, subtitle, playAgain }: Props) => {
     return (
-        <article className="modal">
+        <article  className="modal">
             <div className="modal__container">
                 <h1>{title}</h1>
                 <p>{subtitle}</p>
-                <button className="modal__button" onClick={playAgain}>Volver a jugar</button>
+                <button
+                data-testid="modal_button" className="modal__button" onClick={playAgain}>Volver a jugar</button>
             </div>
         </article>
     );

@@ -8,7 +8,7 @@ interface Props {
 
 const Box = ({ value, onClick }: Props) => {
     return (
-        <div className="box" onClick={onClick}>
+        <div data-testid="box" className="box" onClick={onClick}>
             {
                 value && <div style={{backgroundColor: value.color}} className="box__chip"></div>
             }

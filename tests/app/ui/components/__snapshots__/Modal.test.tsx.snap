@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Test de Modal > Snapshot del Modal 1`] = `[Function]`;
