@@ -13,7 +13,6 @@ export const usePlayFourInLine = () => {
   } = state;
     
   const handleColumnClick = (colIndex: number) => {
-    console.log({colIndex});
     if (winner) return;
   
     for (let row = ROWS - 1; row >= 0; row--) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import {ScoreBoard} from '../../../src/app/ui/components/ScoreBoard';
+import {ScoreBoard} from '../../../../src/app/ui/components/ScoreBoard';
 
 describe('ScoreBoard', () => {
 

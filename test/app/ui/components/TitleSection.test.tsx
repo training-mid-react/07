@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import {TitleSection} from '../../../src/app/ui/components/TitleSection';
+import {TitleSection} from '../../../../src/app/ui/components/TitleSection';
 
 describe('TitleSection', () => {
 

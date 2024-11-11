@@ -2,7 +2,7 @@ import React from 'react';
 import { vi } from 'vitest';
 import { fireEvent, render } from '@testing-library/react';
 
-import {Modal} from '../../../src/app/ui/components/Modal';
+import {Modal} from '../../../../src/app/ui/components/Modal';
 
 describe('Modal', () => {
 
