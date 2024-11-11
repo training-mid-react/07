@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import PlayerInfo from '../../../../src/app/ui/components/PlayerInfo';
 
 describe('Componente PlayerInfo', () => {
