@@ -1,0 +1,313 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`useBoardContainer hook > Match snapshoot 1`] = `
+<DocumentFragment>
+  <div
+    class="board-layout__header"
+  >
+    <section>
+      <h3>
+        Jugadores:
+      </h3>
+      <ul>
+        <li
+          style="color: blue;"
+        >
+          Jugador 1
+        </li>
+        <li
+          style="color: red;"
+        >
+          Jugador 2
+        </li>
+      </ul>
+    </section>
+    <h1>
+      Jugador 1 es tu turno
+    </h1>
+    <button>
+      Reiniciar juego
+    </button>
+  </div>
+  <div
+    class="board"
+  >
+    <div
+      class="board__column"
+    >
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+    </div>
+    <div
+      class="board__column"
+    >
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+    </div>
+    <div
+      class="board__column"
+    >
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+    </div>
+    <div
+      class="board__column"
+    >
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+    </div>
+    <div
+      class="board__column"
+    >
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+    </div>
+    <div
+      class="board__column"
+    >
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+      <div
+        class="board__square"
+      >
+        <div
+          class="board__square__content "
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

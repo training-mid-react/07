@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game > Match snapshoot 1`] = `
+<DocumentFragment>
+  <div
+    class="board-layout__header"
+  >
+    <section>
+      <h3>
+        Jugadores:
+      </h3>
+      <ul />
+    </section>
+    <h1>
+      undefined es tu turno
+    </h1>
+    <button>
+      Reiniciar juego
+    </button>
+  </div>
+  <div
+    class="board"
+  />
+</DocumentFragment>
+`;
