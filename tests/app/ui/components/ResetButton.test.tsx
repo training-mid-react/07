@@ -1,7 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ResetButton } from '../../../../src/app/ui/components/ResetButton/index';
 import React from 'react';
-import { vi } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
+import '@testing-library/jest-dom';
 
 describe('Button', () => {
     const mockOnClickResetButton = vi.fn();

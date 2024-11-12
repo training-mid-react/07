@@ -1,6 +1,6 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { Square } from '../../../../src/app/ui/components/Square/index';
-import { vi } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 import React from 'react';
 // agruegue esto y me dejo de dar error
 import '@testing-library/jest-dom';

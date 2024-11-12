@@ -3,16 +3,10 @@ import { Game } from '@ui/components/Game';
 import { LayoutBoard } from '@ui/layouts/LayoutBoard/LayoutBoard';
 
 export const BoardContainer = () => {
-    const { state, onClickResetButton, fallingCells, handleClick } =
-        useBoardContainer();
+    const props = useBoardContainer();
     return (
         <LayoutBoard>
-            <Game
-                state={state}
-                onClickResetButton={onClickResetButton}
-                fallingCells={fallingCells}
-                handleClick={handleClick}
-            />
+            <Game {...props} />
         </LayoutBoard>
     );
 };

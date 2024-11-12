@@ -9,8 +9,9 @@ import {
 import { checkWinner } from '@core/utils';
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { IBoardContainerProps } from '../../interfaces/game/boardContainerProps.interface';
 
-export const useBoardContainer = () => {
+export const useBoardContainer = (): IBoardContainerProps => {
     const { state, dispatch } = useContext(AppContext);
     const navigate = useNavigate();
     const winner = state.winner;
@@ -61,5 +62,6 @@ export const useBoardContainer = () => {
             }
         }
     };
-    return { state, onClickResetButton, fallingCells, handleClick };
+
+    return { state, fallingCells, onClickResetButton, handleClick };
 };

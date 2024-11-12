@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Form } from '../../../../src/app/ui/components/Form';
-import { vi } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 import React from 'react';
 import '@testing-library/jest-dom';
 
@@ -10,7 +10,7 @@ vi.mock('@core/hooks', () => ({
             { label: 'Rojo', value: 'red' },
             { label: 'Azul', value: 'blue' },
         ],
-        register: jest.fn(),
+        register: vi.fn(),
         handleSubmit: (callback: any) => callback,
         errors: {},
         setValue: vi.fn(),
@@ -23,7 +23,6 @@ vi.mock('@core/hooks', () => ({
 
 describe('Form', () => {
     const mockOnSubmit = vi.fn((data) => {
-        console.log(data);
         Promise.resolve();
     });
 
@@ -71,6 +70,26 @@ describe('Form', () => {
         alert.forEach((a) => expect(a).toBeInTheDocument());
 
         expect(mockOnSubmit).not.toHaveBeenCalled();
+    });
+
+    test('function is not called if data is wrong', async () => {
+        const { container, getAllByLabelText } = render(
+            <Form onSubmit={mockOnSubmit} />
+        );
+
+        const selectColor = getAllByLabelText('Color:');
+
+        for (const [_, select] of selectColor.entries())
+            await waitFor(() => {
+                fireEvent.change(select, {
+                    target: { value: 'blue' },
+                });
+                fireEvent.blur(select);
+            });
+
+        expect(container.innerHTML).toMatch(
+            'Los jugadores no pueden compartir el mismo color'
+        );
     });
 
     test('function is called if data is completed', async () => {

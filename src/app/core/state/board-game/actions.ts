@@ -1,14 +1,6 @@
 import { IPlayer } from '@core/interfaces';
 import { OptionsColors } from '@core/types';
-import { boardGameInitialState } from '.';
-
-export const boardGameActions = {
-    SET_PLAYERES: 'SET_PLAYERES',
-    SET_CURRENT_PLAYER: 'SET_CURRENT_PLAYER',
-    UPDATE_BOARD: 'UPDATE_BOARD',
-    SET_WINNER: 'SET_WINNER',
-    RESET_STATE: 'RESET_STATE',
-};
+import { boardGameInitialState, boardGameActions } from '.';
 
 export const setPlayeres = (player: IPlayer[]) => ({
     type: boardGameActions.SET_PLAYERES,

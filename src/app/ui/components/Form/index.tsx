@@ -1,12 +1,12 @@
 import { IPlayerForm } from '@core/interfaces';
 import './styles.scss';
-import { useform } from '@core/hooks';
+import { useCustomForm } from '@core/hooks';
 import { FC } from 'react';
 
 export const Form: FC<{
     onSubmit: (data: IPlayerForm) => void;
 }> = ({ onSubmit }) => {
-    const { selectOptions, register, handleSubmit, errors } = useform();
+    const { selectOptions, register, handleSubmit, errors } = useCustomForm();
 
     return (
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
@@ -16,6 +16,7 @@ export const Form: FC<{
             <label>
                 Nombre:
                 <input
+                    role="input"
                     type="text"
                     {...register('player1.name', {
                         required: 'Nombre es requerido',

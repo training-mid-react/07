@@ -1,8 +1,7 @@
-import { createContext, useReducer } from 'react';
+import { createContext, useContext, useReducer } from 'react';
 import { initialState, reducer } from './reducer';
 import { IContext, IState } from '@core/interfaces';
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const AppContext = createContext<IContext>({
     state: {} as IState,
     dispatch: () => {},
@@ -17,3 +16,5 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
         </AppContext.Provider>
     );
 };
+
+export const useAppContext = () => useContext(AppContext);

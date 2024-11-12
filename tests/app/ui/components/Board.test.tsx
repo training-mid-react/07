@@ -1,8 +1,7 @@
 import { Board } from '../../../../src/app/ui/components/Board';
-import { vi } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import { render, fireEvent } from '@testing-library/react';
 
 describe('Board', () => {
     const mockFallingCells: string[] = ['0-0', '1-1', '3-4'];

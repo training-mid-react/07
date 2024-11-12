@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Game } from '../../../../src/app/ui/components/Game';
-import { vi } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 import React from 'react';
 
 describe('Game', () => {

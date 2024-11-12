@@ -16,6 +16,7 @@ exports[`Home > Match snapshoot 1`] = `
       <input
         name="player1.name"
         placeholder="Ingresa un nombre"
+        role="input"
         type="text"
       />
     </label>

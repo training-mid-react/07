@@ -33,6 +33,7 @@
     },
     "include": [
         "src",
-        "tests/setupTests.ts"
+        "tests/setupTests.ts",
+        "tests/app/core/hooks/useCustomForm.test.tsx"
     ]
 }

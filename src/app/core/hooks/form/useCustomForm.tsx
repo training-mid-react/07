@@ -1,8 +1,9 @@
 import { IPlayerForm } from '@core/interfaces';
 import { useEffect } from 'react';
+import { ICustomFormProps } from '../../interfaces/game/customFormProps.interface';
 import { useForm } from 'react-hook-form';
 
-export const useform = () => {
+export const useCustomForm = (): ICustomFormProps => {
     const {
         register,
         setError,
