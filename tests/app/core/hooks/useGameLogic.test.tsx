@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderHook, act } from '@testing-library/react';
 import { vi } from 'vitest';
-import { MockAppContextProvider } from '../../../../src/app/core/state/MockAppContextProvider';  // Se restaura el import
+import { MockAppContextProvider } from '../../../../src/app/core/state/MockAppContextProvider';
 import { useGameLogic } from '../../../../src/app/core/hooks/useGameLogic';
 import '@testing-library/jest-dom';
 
