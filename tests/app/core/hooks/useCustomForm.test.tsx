@@ -7,14 +7,6 @@ import { initialState } from '../../../../src/app/core/state/reducer';
 import { ICustomFormProps } from '../../../../src/app/core/interfaces/game/customFormProps.interface';
 import { Form } from '../../../../src/app/ui/components/Form/index';
 
-const renderHookWithContext = (children: React.ReactNode) => {
-    return render(
-        <AppContext.Provider value={{ state: initialState, dispatch: vi.fn() }}>
-            <LayoutBoard>{children}</LayoutBoard>
-        </AppContext.Provider>
-    );
-};
-
 vi.mock('react-router-dom', () => {
     return {
         useNavigate: vi.fn(),
@@ -24,8 +16,26 @@ vi.mock('react-router-dom', () => {
 let useCustomFormCall: RenderHookResult<ICustomFormProps, unknown>;
 
 describe('useCustomForm hook', () => {
+    const renderHookWithContext = (children: React.ReactNode) => {
+        return render(
+            <AppContext.Provider
+                value={{ state: initialState, dispatch: vi.fn() }}
+            >
+                <LayoutBoard>{children}</LayoutBoard>
+            </AppContext.Provider>
+        );
+    };
+
     beforeEach(() => {
         useCustomFormCall = renderHook(() => useCustomForm());
+    });
+
+    test('hooks respond correctly', () => {
+        const { asFragment } = renderHookWithContext(
+            <Form onSubmit={vi.fn()} />
+        );
+
+        expect(asFragment()).toMatchSnapshot();
     });
 
     test('should return correct select options', () => {
@@ -36,11 +46,5 @@ describe('useCustomForm hook', () => {
             { value: 'red', label: 'Rojo' },
             { value: 'blue', label: 'Azul' },
         ]);
-    });
-
-    test('should ', () => {
-        const { result } = useCustomFormCall;
-        renderHookWithContext(<Form onSubmit={vi.fn()} />);
-        console.log({ result: result.current });
     });
 });

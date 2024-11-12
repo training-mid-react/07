@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { IPlayer } from '../../../../../src/app/core/interfaces/game/player.interface';
 import { OptionsColors } from '../../../../../src/app/core/types/optionsColors.type';
 import {
