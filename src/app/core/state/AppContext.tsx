@@ -4,7 +4,7 @@ import { IAppContextProps, IGameState } from '../interfaces/state';
 
 const AppContext = createContext<IAppContextProps | undefined>(undefined);
 
-export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const AppProvider: React.FC<{ children: ReactNode; value?: IAppContextProps }> = ({ children, value }) => {
     const initialState: IGameState = {
         board: Array.from({ length: 6 }, () => Array(7).fill(0)),
         currentPlayer: 1,
@@ -13,9 +13,11 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     };
 
     const [state, dispatch] = useReducer(gameReducer, initialState);
+    const contextValue = value || { state, dispatch };
+
 
     return (
-        <AppContext.Provider value={{ state, dispatch }}>
+        <AppContext.Provider value={contextValue}>
             {children}
         </AppContext.Provider>
     );
