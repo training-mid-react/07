@@ -1,0 +1,24 @@
+.cabecera {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.ficha-cabecera {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-inline: auto;
+
+
+
+    &--jugador1 {
+        background-color: red;
+        /* Ficha roja */
+    }
+
+    &--jugador2 {
+        background-color: yellow;
+        /* Ficha amarilla */
+    }
+}

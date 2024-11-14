@@ -1,0 +1,69 @@
+$columnas: 7;
+$filas: 6;
+$altura-celda: 50px;
+$color-tablero: #007bff; // Color azul para el tablero
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    grid-template-rows: repeat($filas, 1fr);
+    gap: 5px;
+    background-color: $color-tablero;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 7 / 6;
+
+
+    &__celda {
+        background-color: #f1f1f1;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@keyframes caer {
+    from {
+        transform: translateY(calc(-100% * 5)); // Comienza en la fila 6
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+.ficha {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    position: relative;
+    top: 0;
+    transform: translateY(100%);
+    animation: caer 0.5s ease-out forwards;
+
+
+    &--jugador1 {
+        background-color: red;
+        /* Ficha roja */
+    }
+
+    &--jugador2 {
+        background-color: yellow;
+        /* Ficha amarilla */
+    }
+}
+
+
+// Ajuste de la distancia de caída según la fila de destino
+// @for $i from 1 through $filas {
+//     .fila-#{$i} .ficha {
+//         animation: caer 0.5s ease-out forwards;
+//         transform: translateY(calc(#{$filas - $i} * #{$altura-celda}));
+//     }
+// }
