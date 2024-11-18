@@ -1,0 +1,9 @@
+@use '../../styles/mixins' as mix;
+
+.layout-main {
+    gap: 10px;
+    min-height: 100vh;
+    padding: 1rem;
+    @include mix.flex();
+  }
+  

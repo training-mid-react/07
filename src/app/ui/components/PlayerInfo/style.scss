@@ -1,0 +1,11 @@
+@use '../../styles/mixins' as mix;
+
+.player-info {
+    gap: 10px;
+    align-items: start;
+
+    &_item {
+      gap: 5px;
+      @include mix.flex();
+    }
+  }

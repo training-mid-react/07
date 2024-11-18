@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Componente TurnInfo > renderiza correctamente 1`] = `
+<DocumentFragment>
+  <div
+    class="turn-info"
+    data-testid="turn-info"
+  >
+    <h3
+      class="title"
+      data-testid="title-component"
+    >
+      Turno de Player 1
+    </h3>
+  </div>
+</DocumentFragment>
+`;

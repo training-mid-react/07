@@ -1,0 +1,8 @@
+@use '../../styles/mixins' as mix;
+
+.turn-info {
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    @include mix.flex(row);
+  }

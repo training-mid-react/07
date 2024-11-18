@@ -1,0 +1,23 @@
+
+@use '../../styles/variables' as var;
+
+.custom-button {
+    background-color: var.$color-green;
+    border-radius: 5px;
+    border: none;
+    color: var.$color-white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 12px 20px;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: darken(var.$color-dark-green, 10%);
+    }
+  
+    &:disabled {
+      background-color: var.$color-gray;
+      cursor: not-allowed;
+    }
+  }
+  

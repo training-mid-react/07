@@ -1,0 +1,41 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Componente PlayerInfo > renderiza correctamente 1`] = `
+<DocumentFragment>
+  <div
+    class="player-info"
+    data-testid="player-info"
+  >
+    <div
+      class="player-info_item"
+      data-testid="player-info_item-cell-1"
+    >
+      <h4
+        class="title"
+        data-testid="title-component"
+      >
+        Player 1
+      </h4>
+      <div
+        class="cell cell-1"
+        data-testid="player-cell-Player 1"
+      />
+    </div>
+    <div
+      class="player-info_item"
+      data-testid="player-info_item-cell-2"
+    >
+      <h4
+        class="title"
+        data-testid="title-component"
+      >
+        Player 2
+      </h4>
+      <div
+        class="cell cell-2"
+        data-testid="player-cell-Player 2"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

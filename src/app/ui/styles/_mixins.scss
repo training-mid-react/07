@@ -1,0 +1,43 @@
+@mixin flex($flex-direction: column) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: center;
+}
+
+@keyframes fallThrough {
+    0% {
+      transform: translateY(-400px);
+    }
+    60% {
+      opacity: 0.5;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+};
+
+  @mixin animation-fall-through {
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fallThrough 0.5s forwards ease-in;
+};
+
+  @mixin cell-style($background-color) {
+    background-color: $background-color;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
