@@ -1,0 +1,202 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Board > Matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="board"
+  >
+    <div
+      class="board__row"
+    >
+      <div
+        class="board__col  "
+        data-testid="cell_0_0"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_0_1"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_0_2"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_0_3"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_0_4"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_0_5"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_0_6"
+      />
+    </div>
+    <div
+      class="board__row"
+    >
+      <div
+        class="board__col  "
+        data-testid="cell_1_0"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_1_1"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_1_2"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_1_3"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_1_4"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_1_5"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_1_6"
+      />
+    </div>
+    <div
+      class="board__row"
+    >
+      <div
+        class="board__col  "
+        data-testid="cell_2_0"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_2_1"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_2_2"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_2_3"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_2_4"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_2_5"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_2_6"
+      />
+    </div>
+    <div
+      class="board__row"
+    >
+      <div
+        class="board__col  "
+        data-testid="cell_3_0"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_3_1"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_3_2"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_3_3"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_3_4"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_3_5"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_3_6"
+      />
+    </div>
+    <div
+      class="board__row"
+    >
+      <div
+        class="board__col  "
+        data-testid="cell_4_0"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_4_1"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_4_2"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_4_3"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_4_4"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_4_5"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_4_6"
+      />
+    </div>
+    <div
+      class="board__row"
+    >
+      <div
+        class="board__col  "
+        data-testid="cell_5_0"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_5_1"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_5_2"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_5_3"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_5_4"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_5_5"
+      />
+      <div
+        class="board__col  "
+        data-testid="cell_5_6"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
